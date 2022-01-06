@@ -13,7 +13,8 @@ import { FooterLandingComponent } from './footer-landing/footer-landing.componen
     AppComponent,
     HeaderLandingComponent,
     FooterLandingComponent,
-    RoutingComponents
+    RoutingComponents,
+
   ],
   imports: [
     BrowserModule,
