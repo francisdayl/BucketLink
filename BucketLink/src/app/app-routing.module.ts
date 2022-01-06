@@ -19,7 +19,7 @@ const routes: Routes = [
       {path:"Ingreso" ,component: IngresoLandingComponent}
     ]
   },
-  {path:"Profile"        ,component: ProfileViewComponent},
+  {path:":id"        ,component: ProfileViewComponent},
   {path:"Admin"        ,component: AdminViewComponent},
   {path:"Usuario"        ,component: UserViewComponent},
   ];
