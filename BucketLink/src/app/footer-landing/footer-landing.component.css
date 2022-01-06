@@ -1,0 +1,6 @@
+footer{
+    background-color: rgb(60,60,88);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}

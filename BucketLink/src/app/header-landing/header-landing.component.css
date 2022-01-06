@@ -1,0 +1,15 @@
+nav{
+    background-color: white;
+    color: rgb(60,60,88);
+    display: flex;
+    justify-content: space-around;
+}
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+li{
+    margin: 0px 15px ;
+    list-style-type: none;
+}
