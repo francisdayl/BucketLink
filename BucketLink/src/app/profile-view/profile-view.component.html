@@ -1,1 +1,8 @@
-<p>profile-view works!</p>
+<div class="view" [ngStyle]="{'background-color': usuarioPerfil.fondo}">
+    <img src={{usuarioPerfil.pictUs}} alt="Perfil de Usuario">
+    <p>@{{subruta.toLowerCase()}}</p>
+    <!--<profile-link-view *ngFor="let user of nombres [nombreSitio]"></profile-link-view>-->
+    <profile-link-view *ngFor="let enlace of LinksEx" [linkSitio]="enlace.nombreUrl" [nombreSitio]="enlace.nombre" [imgSitio]="enlace.imagen" [colorFondo]="enlace.colorFondo" [colorTexto]="enlace.colorLetra"></profile-link-view>
+</div>
+
+

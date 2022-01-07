@@ -8,6 +8,8 @@ import { UserViewComponent } from './user-view/user-view.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { LandingComponent } from './landing/landing.component';
+import { ErrorViewComponent } from './error-view/error-view.component';
+import { ProfileLinkViewComponent } from './profile-link-view/profile-link-view.component';
 
 const routes: Routes = [
   
@@ -19,9 +21,12 @@ const routes: Routes = [
       {path:"Ingreso" ,component: IngresoLandingComponent}
     ]
   },
-  {path:":id"        ,component: ProfileViewComponent},
+  
   {path:"Admin"        ,component: AdminViewComponent},
   {path:"Usuario"        ,component: UserViewComponent},
+  {path:"Error"        ,component: ErrorViewComponent},
+  {path:":id"        ,component: ProfileViewComponent},
+  {path:"**"        ,component: ErrorViewComponent},
   ];
 
 @NgModule({
@@ -31,4 +36,4 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const RoutingComponents = [NosotrosLandingComponent,NoticiasLandingComponent,
   RegistroLandingComponent,IngresoLandingComponent,UserViewComponent,AdminViewComponent,ProfileViewComponent,
-  LandingComponent];
+  LandingComponent,ErrorViewComponent];

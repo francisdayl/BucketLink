@@ -1,0 +1,5 @@
+<a [href]=linkSitio target="_blank" class="LinkContainer" (mouseover)="hover=true" (mouseleave)="hover=false"
+ [ngStyle]="{'color': hover==true ? colorTexto: colorFondo, 'background-color': hover==true ? colorFondo:colorTexto}" >
+    <img src={{imgSitio}} alt="Logo Sitio">
+    <span>{{nombreSitio}}</span>
+</a>

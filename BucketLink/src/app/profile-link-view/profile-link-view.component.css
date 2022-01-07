@@ -1,0 +1,25 @@
+a{
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+    border-radius: 3px;
+    margin-top: 5vh;
+    height: 40px;
+    transition: background-color 0.3s ease-out 10ms;    
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+
+}
+img{    
+    grid-column: 1;
+    padding: 5px 0px;
+    width: 30px;
+    margin: 0px auto;
+}
+span{  
+    grid-column: 2;
+    width: 100%;
+    margin: auto 0;
+    text-align: center;
+}

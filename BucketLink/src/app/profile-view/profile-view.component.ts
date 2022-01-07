@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Enlace,Usuario } from './Enlace';
 
 
 @Component({
@@ -9,11 +10,37 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfileViewComponent implements OnInit {
   
-  constructor(private route: ActivatedRoute) { }
+  subruta:string ='';
+  
+
+  link1 = new Enlace("Instagram","https://www.instagram.com/?hl=es-la","../../assets/Instagram_Icon_White.svg","white","red")
+  link2 = new Enlace("Facebook","https://www.facebook.com/","../../assets/Facebook_Icon_White.svg","white","red")
+  
+  LinksEx: Enlace[] = [this.link1,this.link2];
+  
+  usuarioPerfil: Usuario = new Usuario(this.subruta,"../../assets/undraw_profile_1.svg","coral",this.LinksEx)
+  
+
+  constructor(private route: ActivatedRoute, private router: Router) { }    
   
   ngOnInit(): void {
-    console.warn("user id is ", this.route.snapshot.paramMap.get('id'))
-    
+    this.subruta = this.route.snapshot.paramMap.get('id') || '';
+    console.log(this.subruta)
+
+    if(this.checkUserExistence(this.subruta.toLowerCase())){
+      console.warn("user id is ",  this.route.snapshot.paramMap.get('id'))
+    }
+    else{
+      this.router.navigateByUrl('/Error')
+    }
+  }
+
+  checkUserExistence(ruta_usuario:string):boolean{
+    let usuarios : string[] =['piogram','francisday'];
+    if(usuarios.includes(ruta_usuario)){
+      return true;
+    }    
+    return false;
   }
 
 }
