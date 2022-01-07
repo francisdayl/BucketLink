@@ -9,12 +9,15 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { LandingComponent } from './landing/landing.component';
 import { ErrorViewComponent } from './error-view/error-view.component';
+import { LandingContentComponent } from './landing-content/landing-content.component';
+
 import { ProfileLinkViewComponent } from './profile-link-view/profile-link-view.component';
 
 const routes: Routes = [
   
   {path:""   ,component: LandingComponent,
    children: [
+      {path:"" ,component: LandingContentComponent},
       {path:"Nosotros" ,component: NosotrosLandingComponent},
       {path:"Noticias" ,component: NoticiasLandingComponent},
       {path:"Registro" ,component: RegistroLandingComponent},
@@ -35,5 +38,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const RoutingComponents = [NosotrosLandingComponent,NoticiasLandingComponent,
-  RegistroLandingComponent,IngresoLandingComponent,UserViewComponent,AdminViewComponent,ProfileViewComponent,
-  LandingComponent,ErrorViewComponent];
+  RegistroLandingComponent,IngresoLandingComponent,UserViewComponent,AdminViewComponent,
+  ProfileViewComponent,ProfileLinkViewComponent,LandingComponent,ErrorViewComponent,LandingContentComponent,];
