@@ -25,8 +25,8 @@ export class ProfileViewComponent implements OnInit {
   
   ngOnInit(): void {
     this.subruta = this.route.snapshot.paramMap.get('id') || '';
-    console.log(this.subruta)
-
+    console.log(this.subruta+"Es el nombre del usuario")
+    
     if(this.checkUserExistence(this.subruta.toLowerCase())){
       console.warn("user id is ",  this.route.snapshot.paramMap.get('id'))
     }

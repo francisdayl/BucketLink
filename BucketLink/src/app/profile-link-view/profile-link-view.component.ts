@@ -14,7 +14,7 @@ export class ProfileLinkViewComponent implements OnInit {
   @Input() colorTexto:string;
   @Input() imgSitio:string;
   hover: boolean = false;
- 
+
   /*@Input() nombreSitio:string;
   @Input() linkSitio:string;
   @Input() colorFondo:string;
@@ -28,9 +28,7 @@ export class ProfileLinkViewComponent implements OnInit {
     this.colorFondo="white";
     this.colorTexto="black";
     this.imgSitio="../../assets/ConfigIcon.svg";
-  
-
-   }
+  }
 
   ngOnInit(): void {
     /*this.nombreSitio=nombSitio;

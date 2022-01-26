@@ -1,0 +1,72 @@
+
+.LinkContainer {
+    width: 60%;
+    border: 4px solid var(--main-color);
+    border-radius: 10px;
+    height: 100px;
+    margin: 10px auto;
+}
+button img {
+    height: 30px;
+}
+.LinkContainer {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    
+}
+.DraggableSection {
+    grid-column: 1;
+    cursor: grab;
+    border-right: 4px solid var(--main-color);
+    width: 100%;
+    height: 100%;
+}
+.LinkInfo {
+    grid-column: 2;
+}
+
+.DraggableImg {    
+    padding: 15px 5%;
+    width: 80%;   
+}
+.EditableInfo {
+margin-left: 0.5rem;
+display: flex;
+flex-direction: column;
+}
+input {
+font-weight: 500;
+padding-left: 0.5rem;
+}
+input[name="LinkTitle"] {
+font-weight: 700;
+}
+
+.LinkOptions {
+    margin-top: 5px;
+display: flex;
+justify-content: space-between;
+}
+.LinkContainer input {
+border: none;
+}
+.LinkOptions img {
+height: 1.5rem;
+width: 1.5rem;
+}
+.LinkOptions button {
+height: 1.5rem;
+width: 1.5rem;
+background-color: white;
+border: none;
+}
+.LinkOptionStyle,.LinkOptionsConfig {
+height: 1.5rem;
+width: 1.5rem;
+width: 30%;
+display: flex;
+justify-content: space-evenly;
+}
+.LinkOptionStyle {
+width: 20%;
+}
