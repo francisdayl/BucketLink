@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-content.component.css']
 })
 export class LandingContentComponent implements OnInit {
-
+  focus: any;
+  focus1: any;
   constructor() { }
 
   ngOnInit(): void {
