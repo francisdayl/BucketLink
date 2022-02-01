@@ -30,8 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/assets/scss/argon.scss"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/sass/paper-kit.scss",
+              "src/assets/css/demo.css"
             ],
             "scripts": []
           },
