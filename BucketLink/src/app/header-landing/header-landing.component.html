@@ -7,3 +7,39 @@
         <li> <a routerLink="/Ingreso" routerLinkActive="Active">Iniciar Sesión</a></li>
     </ul>
 </nav>
+<!-- Navbar  TA WONITO NO TOCAR !!-->
+<nav id="menuprincipal" class="navbar navbar-expand-lg fixed-top" color-on-scroll="300">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" routerLink="/">
+                BucketLink
+            </a>
+            <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/Nosotros" routerLinkActive="Active">
+                        <p>Nosotros</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/Noticias" routerLinkActive="Active">
+                        <p>Noticias</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/Ingreso" routerLinkActive="Active">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-danger btn-round" routerLink="/Registro" routerLinkActive="Active">Sign up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
