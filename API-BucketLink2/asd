@@ -1,0 +1,1 @@
+mongoose-gen -m bucket -f id_Cliente:string,cantidad_Reportes:number,color_Fondo:string,color_Letra:string,visitas:number,image:string -r
