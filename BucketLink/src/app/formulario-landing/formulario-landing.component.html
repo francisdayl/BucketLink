@@ -1,0 +1,116 @@
+<!-- Forms-->
+<div class="section landing-section" id="contacto">
+    <h2 class="text-center">Contactenos</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+          <form class="contact-form" [formGroup]="form" (submit)="enviarContacto()">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Nombres</label>
+                <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="nc-icon nc-single-02"></i>
+                    </span>
+                  </div>
+                  <input type="text" formControlName="nombre" class="form-control" placeholder="Nombres" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label>Apellidos</label>
+                <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="nc-icon nc-single-02"></i>
+                    </span>
+                  </div>
+                  <input  formControlName="apellido" type="text" class="form-control" placeholder="Apellidos" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label>Fecha de Nacimiento</label>
+                <div class="input-group date" id="datetimepicker">
+                  <input formControlName="fechaNacimiento" type="text" class="form-control datetimepicker" placeholder="27/03/2019" />
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <span class="glyphicon glyphicon-calendar"><i class="fa fa-calendar"
+                          aria-hidden="true"></i></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label>Ciudad</label>
+                <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="nc-icon nc-globe"></i>
+                    </span>
+                  </div>
+                  <input formControlName="ciudad" type="text" class="form-control" placeholder="Ciudad" />
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <label>País</label>
+                <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="nc-icon nc-compass-05"></i>
+                    </span>
+                  </div>
+                  <select class="custom-select" id="inputGroupSelect01" formControlName="pais">
+                    <option Svalue="0">Selecciona una opción</option>
+                    <option  *ngFor="let item of listapaises" >{{item.name}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <label>Correo Electronico</label>
+            <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="nc-icon nc-email-85"></i>
+                </span>
+              </div>
+              <input formControlName="correoElectronico"  type="text" class="form-control" placeholder="Correo Electronico" />
+            </div>
+            <label>Mensaje</label>
+            <textarea formControlName="detalle"  class="form-control" rows="3" placeholder="Mensaje..."></textarea>
+            <div class="row">
+              <div class="col-md-4 ml-auto mr-auto">
+                <button class="btn btn-info btn-lg btn-fill">
+                  Enviar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 ml-auto mr-auto">
+          <div class="content-map">
+            <div class="info-contac">
+              <div class="item-contac direccion">
+                <i class="nc-icon nc-pin-3"></i>
+                <p class="item">Direccion X</p>
+              </div>
+              <div class="item-contac telf">
+                <i class="nc-icon nc-chat-33"></i>
+                <p class="item">+593 09x-xxx-xxxx</p>
+              </div>
+              <div class="item-contac email">
+                <i class="nc-icon nc-email-85"></i>
+                <p class="item">hello@info.com.ec</p>
+              </div>
+            </div>
+            <div class="map-1">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15948.058680005177!2d-79.96449!3d-2.14807!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x327cdb9f7f4ba3b2!2sEscuela%20Superior%20Polit%C3%A9cnica%20del%20Litoral%20(ESPOL)!5e0!3m2!1ses!2sec!4v1643701544670!5m2!1ses!2sec"
+                width="500" height="380" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Forms-->

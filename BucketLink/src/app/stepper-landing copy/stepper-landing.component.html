@@ -1,0 +1,27 @@
+<div class="container-fluid" id="grad1">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform">
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class={{class[0]}} id="account"><strong>Paso 1</strong></li>
+                                <li  class={{class[1]}} id="personal"><strong>Paso 2</strong></li>
+                                <li  class={{class[2]}} id="payment"><strong>Paso 3</strong></li>
+                             </ul> <!-- fieldsets -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">{{titulo[i]}}</h2>
+                                    <p>{{texto [ i ] }}</p>
+                                </div>
+                                <input  type="button"  (click)="siguiente()" name="Siguiente" class="next action-button" value="Siguiente" />
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
