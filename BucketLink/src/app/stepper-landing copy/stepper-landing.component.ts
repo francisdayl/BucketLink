@@ -17,14 +17,14 @@ export class StepperLandingComponent implements OnInit {
 i=0;
 
 titulo=[
-  'Regitrate',
-  'Elige y pide',
-  'Forma de pago',
+  'Create una cuenta en BuckLink',
+  'Ingresa con usuario y contrasena',
+  'Ingresa tus links y listo!',
 ]
 texto=[
-  'Registrate para que puedas realizar los pedidos.',
-  'Ve a la tienda y elige tus productos preferidos.',
-  'Elige tu forma de pago, puede ser por cargeta o en efectivo.'
+  'Registrate para que puedas centralizar tus links',
+  'Luego, ingresa con tu cuenta BucketLink',
+  'Elige tu disenos favoritos para tu BucketLink.'
 ]
 class=[
   'active',
@@ -33,7 +33,7 @@ class=[
 ]
 
 siguiente(){
-  if(this.i<=2) {
+  if(this.i<=1) {
     this.i++;
     this.class[this.i]='active';
   }
