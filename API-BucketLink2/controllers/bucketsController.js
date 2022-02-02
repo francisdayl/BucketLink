@@ -29,7 +29,7 @@ module.exports = {
     show: function (req, res) {
         var id = req.params.id;
 
-        BucketsModel.findOne({_id: id}, function (err, buckets) {
+        BucketsModel.findOne({idCliente: id}, function (err, buckets) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when getting buckets.',
