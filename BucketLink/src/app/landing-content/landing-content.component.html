@@ -118,7 +118,6 @@
                   <div class="step-title">Tercer Paso</div>
                 </div>
               </div>
-
               <div class="card">
                 <div id="headingOne"></div>
 
@@ -145,6 +144,7 @@
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 ml-auto mr-auto">
-          <form class="contact-form">
+          <form class="contact-form" [formGroup]="form" (submit)="enviarContacto()">
             <div class="row">
               <div class="col-md-6">
                 <label>Nombres</label>
@@ -167,7 +167,7 @@
                       <i class="nc-icon nc-single-02"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Nombres" />
+                  <input type="text" formControlName="nombre" class="form-control" placeholder="Nombres" />
                 </div>
               </div>
               <div class="col-md-6">
@@ -178,13 +178,13 @@
                       <i class="nc-icon nc-single-02"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Apellidos" />
+                  <input  formControlName="apellido" type="text" class="form-control" placeholder="Apellidos" />
                 </div>
               </div>
               <div class="col-md-6">
                 <label>Fecha de Nacimiento</label>
                 <div class="input-group date" id="datetimepicker">
-                  <input type="text" class="form-control datetimepicker" placeholder="27/03/2019" />
+                  <input formControlName="fechaNacimiento" type="text" class="form-control datetimepicker" placeholder="27/03/2019" />
                   <div class="input-group-append">
                     <span class="input-group-text">
                       <span class="glyphicon glyphicon-calendar"><i class="fa fa-calendar"
@@ -201,7 +201,7 @@
                       <i class="nc-icon nc-globe"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Ciudad" />
+                  <input formControlName="ciudad" type="text" class="form-control" placeholder="Ciudad" />
                 </div>
               </div>
 
@@ -213,11 +213,9 @@
                       <i class="nc-icon nc-compass-05"></i>
                     </span>
                   </div>
-                  <select class="custom-select" id="inputGroupSelect01">
-                    <option selected>Seleccione el país:</option>
-                    <option value="1">Ecuador</option>
-                    <option value="2">Peru</option>
-                    <option value="3">Colombia</option>
+                  <select class="custom-select" id="inputGroupSelect01" formControlName="pais">
+                    <option Svalue="0">Selecciona una opción</option>
+                    <option  *ngFor="let item of listapaises" >{{item.name}}</option>
                   </select>
                 </div>
               </div>
@@ -229,10 +227,10 @@
                   <i class="nc-icon nc-email-85"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Correo Electronico" />
+              <input formControlName="correoElectronico"  type="text" class="form-control" placeholder="Correo Electronico" />
             </div>
             <label>Mensaje</label>
-            <textarea class="form-control" rows="3" placeholder="Mensaje..."></textarea>
+            <textarea formControlName="detalle"  class="form-control" rows="3" placeholder="Mensaje..."></textarea>
             <div class="row">
               <div class="col-md-4 ml-auto mr-auto">
                 <button class="btn btn-info btn-lg btn-fill">

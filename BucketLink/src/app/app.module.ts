@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule,RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderLandingComponent } from './header-landing/header-landing.component';
 import { FooterLandingComponent } from './footer-landing/footer-landing.component';
 import { LinkEditableComponent } from './link-editable/link-editable.component';
 import { CelularViewComponent } from './celular-view/celular-view.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 
 
@@ -21,9 +22,13 @@ import { CelularViewComponent } from './celular-view/celular-view.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
