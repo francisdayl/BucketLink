@@ -33,7 +33,7 @@ exports.findId = (req, res) => {
 
   Usuarios.findAll({
     where: {
-      fk_id_Cliente: id
+      username: id
      }
      
    })

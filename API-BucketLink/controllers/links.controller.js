@@ -17,13 +17,13 @@ exports.findAll = (req, res) => {
         res.send(data );
       } else {
         res.status(404).send({
-          message: `Cannot find Cliente with id=${id}.`
+          message: `Cannot find Cliente with id=.`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error retrieving Cliente with id=" + id
+        message: "Error retrieving Cliente with id=" 
       });
     });
   };
@@ -43,13 +43,13 @@ exports.findId = (req, res) => {
        res.send(data  );
      } else {
        res.status(404).send({
-         message: `Cannot find Cliente with id=${id}.`
+         message: `Cannot find Cliente with id=.`
        });
      }
    })
    .catch(err => {
      res.status(500).send({
-       message: "Error retrieving Cliente with id=" + id
+       message: "Error retrieving Cliente with id=" 
      });
    });
  };

@@ -12,7 +12,7 @@
 
 # profiling files
 chrome-profiler-events*.json
-
+/crud_cliente
 # IDEs and editors
 /.idea
 .project

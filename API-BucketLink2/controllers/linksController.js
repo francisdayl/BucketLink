@@ -29,7 +29,7 @@ module.exports = {
     show: function (req, res) {
         var id = req.params.id;
 
-        LinksModel.findOne({idCliente : id}, function (err, links) {
+        LinksModel.find({idCliente : id}, function (err, links) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when getting links.',
@@ -79,7 +79,7 @@ module.exports = {
     update: function (req, res) {
         var id = req.params.id;
 
-        LinksModel.findOne({_id: id}, function (err, links) {
+        LinksModel.findOne({idCliente: id}, function (err, links) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when getting links',
@@ -120,7 +120,7 @@ module.exports = {
     remove: function (req, res) {
         var id = req.params.id;
 
-        LinksModel.findByIdAndRemove(id, function (err, links) {
+        LinksModel.remove({idCliente: id}, function (err, links) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when deleting the links.',
