@@ -7,21 +7,25 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true
     },
-    Nombres: {
+    CantidadReportes: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    Fondo: {
       type: DataTypes.STRING(200),
       allowNull: false
     },
-    Apellidos: {
-      type: DataTypes.STRING(200),
-      allowNull: false
-    },
-    email: {
+    username: {
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    creation: {
-      type: DataTypes.DATE,
-      allowNull: true
+    fk_id_Usuario: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'usuario',
+        key: 'id_Usuario'
+      }
     }
   }, {
     sequelize,
@@ -34,6 +38,13 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id_Cliente" },
+        ]
+      },
+      {
+        name: "fk_id_Usuario",
+        using: "BTREE",
+        fields: [
+          { name: "fk_id_Usuario" },
         ]
       },
     ]

@@ -2,10 +2,8 @@ var express = require('express');
 const { json } = require('express/lib/response');
 var router = express.Router();
 
-var bucketController = require('../controllers/bucketController.js');
+var bucketController = require('../controllers/bucketsController.js');
 
-var facturasantiguasController = require('../controllers/facturasantiguasController.js');
-var animesController = require('../controllers/animesController.js');
 var AnimeModel = require('../models/animesModel');
 
 

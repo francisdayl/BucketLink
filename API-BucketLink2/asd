@@ -1,1 +1,2 @@
-mongoose-gen -m bucket -f id_Cliente:string,cantidad_Reportes:number,color_Fondo:string,color_Letra:string,visitas:number,image:string -r
+mongoose-gen -m buckets -f WebSiteURL:string,UserName:string,FechaVisita:string -r
+mongoose-gen -m links -f WebSiteURL:string,WebSiteNombre:string,idCliente:string,Imagen:string,ColorFondo:string,ColorLetra:string,Visitas:number -r

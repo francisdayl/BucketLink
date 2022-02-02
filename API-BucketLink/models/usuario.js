@@ -17,15 +17,19 @@ module.exports = function(sequelize, DataTypes) {
     },
     rol: {
       type: DataTypes.STRING(100),
-      allowNull: true
+      allowNull: false
     },
-    fk_id_Cliente: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'cliente',
-        key: 'id_Cliente'
-      }
+    Nombres: {
+      type: DataTypes.STRING(200),
+      allowNull: false
+    },
+    email: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
+    creation: {
+      type: DataTypes.DATE,
+      allowNull: true
     }
   }, {
     sequelize,
@@ -38,13 +42,6 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id_Usuario" },
-        ]
-      },
-      {
-        name: "fk_id_Cliente",
-        using: "BTREE",
-        fields: [
-          { name: "fk_id_Cliente" },
         ]
       },
     ]
