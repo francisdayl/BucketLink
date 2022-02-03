@@ -71,13 +71,16 @@ export class BarChartVisitComponent implements OnInit {
   }
 
   drawBars() {
+    console.log(StatsBarChart)
     this.g.selectAll('.bar')
       .data(StatsBarChart)
       .enter().append('rect')
       .attr('class', 'bar')
-      
+      .att('x',StatsBarChart.map((d) =>this.x(d.company)))
+      .attr('y', StatsBarChart.map((d) => this.y(d.frequency)))
       .attr('width', this.x.bandwidth())
       .attr('fill', '#498bfc')
+      .attr('height', StatsBarChart.map((d)  => this.height - this.y(d.frequency)))
       ;
   }
 
