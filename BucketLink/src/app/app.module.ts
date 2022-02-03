@@ -12,7 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LineChartVisitComponent } from './line-chart-visit/line-chart-visit.component';
 import { BarChartVisitComponent } from './bar-chart-visit/bar-chart-visit.component';
-import { PieVisitComponent } from './pie-visit/pie-visit.component'
+import { PieVisitComponent } from './pie-visit/pie-visit.component';
+import { NoticiaEditComponent } from './noticia-edit/noticia-edit.component'
 
 
 
@@ -28,7 +29,8 @@ import { PieVisitComponent } from './pie-visit/pie-visit.component'
     StepperLandingComponent,
     LineChartVisitComponent,
     BarChartVisitComponent,
-    PieVisitComponent
+    PieVisitComponent,
+    NoticiaEditComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,91 @@
-<p>admin-view works!</p>
-<line-chart-visit></line-chart-visit>
-<pie-visit></pie-visit>
-<bar-chart-visit></bar-chart-visit>
+<nav >
+    <ul>
+    <li>
+        <img src="../../assets/UserIcon.svg" alt="Icono de Usuario" class="UserIcon"/>
+        <span>@Usuario123</span>
+    </li>
+    <li>
+        <a (click)="desingPage()"  (mouseover)="hoverDesign=true" (mouseleave)="hoverDesign=false" [ngStyle]="{'background-color': designOption||hoverDesign ? '#7e73ff':'#2e2e48' }"><img src="../../assets/NewsIcon.svg" alt="Noticias" class="MenuIcon"/>
+        <span>Noticias</span></a>
+    </li>
+    <li class="Reportes">
+        <a (click)="statisticsPage()" (mouseover)="hoverStatistics=true" (mouseleave)="hoverStatistics=false" [ngStyle]="{'background-color': statisticsOption||hoverStatistics ? '#7e73ff':'#2e2e48' }"><img src="../../assets/StatisticsIcon.svg" alt="Estadísticas" class="MenuIcon"/>
+        <span>Estadísticas</span></a>
+    </li>
+    <li>
+        <a (click)="configPage()"  (mouseover)="hoverConfig=true" (mouseleave)="hoverConfig=false" [ngStyle]="{'background-color': configOption||hoverConfig ? '#7e73ff':'#2e2e48'}" ><img src="../../assets/ConfigIcon.svg" alt="Configuración" class="MenuIcon"/>
+        <span>Configuración</span></a>
+    </li>
+    <li class="LogOut">
+        <a href="../index.html">
+        <img src="../../assets/LogOutIcon.svg" alt="Cerrar Sesion" class="MenuIcon" />
+        <span>Cerrar Sesion</span></a>
+    </li>
+    </ul>
+</nav>
+<main [ngStyle]="{'display': designOption ? 'grid': 'none'}">
+    <div class="ContainerMain" >
+        <div class="ContentOptions">
+            
+            <div class="ButtonOptions">
+                <button (click)="agregarLink()">+</button>
+            </div>
+        </div>
+        <div class="ScrollableContent" id="LinksEditableContainer" [ngStyle]="{'display': showLinkEdit ? 'block': 'none'}">
+            
+            <link-editable *ngFor="let link of LinksEx"  [nombreSitio]="link.nombre" [linkSitio]="link.nombreUrl" [imgSitio]="link.imagen"></link-editable>
+
+        </div>
+        <div class="BackgroundPicker" [ngStyle]="{'display': showBcgPicker ? 'flex': 'none'}"> 
+            <div>
+            <label for="bcgColor">Elija el color de fondo para su perfil:</label><input type="color" name="bcgColor" id="bcgColor">
+            </div>
+            <button>Guardar Cambios</button>
+        </div>
+        <div class="LinkDesign" [ngStyle]="{'display': showLinkDesign ? 'flex': 'none'}">
+            <div>
+            <label for="bcgColor">Elija el color de fondo para sus links:</label><input type="color" name="bcgColor" id="bcgColor">
+            </div>
+            <div>
+            <label for="textColor">Elija el color de letra para sus links:</label><input type="color" name="textColor" id="textColor">    
+            </div>
+            <button>Guardar Cambios</button>
+        </div>
+        
+    </div>
+    <div class="ContainerPreview">
+        <div class="Share-Block">
+            <input type="text" class="MyLink" value="pagina/usuario" />
+            <button class="ShareLink">Copiar</button>
+        </div>
+        <div class="CellBase">
+            <div id="CellLinks">
+            
+            </div>
+        </div>
+    </div>
+</main>
+<div class="Estadisticas" [ngStyle]="{'display': statisticsOption ? 'flex': 'none'}">
+    <div>
+        Estadisticas de 1
+        Estadisticas de 2
+        Estadisticas de 3
+    </div>
+</div>
+<div class="Configuracion" [ngStyle]="{'display': configOption ? 'flex': 'none'}" >
+    <div>
+        <label for="correo">Correo: </label>
+        <input type="email" value="Correo@hotmail.com" disabled>
+    </div>
+    <div>
+        <label for="clave">Nueva Contraseña: </label>
+        <input type="password" name="clave" id="clave" placeholder="Ingrese nueva contraseña">
+    </div>
+    <div>
+        <label for="clave">Confirme la nueva Contraseña: </label>
+        <input type="password" name="clave2" id="clave2" placeholder="Repita la nueva contraseña">
+    </div>
+    <button>Actualizar Clave</button>
+</div>
+
+

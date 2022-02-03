@@ -1,0 +1,256 @@
+
+* {
+    font-size: 14px;
+    font-family:  Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+main , .Configuracion, .Estadisticas{
+margin-left: 80px;
+}
+
+nav {
+position: fixed;
+background-color: #2e2e48;
+width: 80px;
+height: 100%;
+transition: width 200ms ease;
+}
+
+ul {
+list-style-type: none;
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+li {
+width: 100%;
+}
+
+li a > img {
+height: 40px;
+width: 40px;
+margin: 0 0 0 20px;
+}
+li a{
+    cursor: pointer;
+}
+li:first-child {
+margin: 80px auto 140px;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+
+li:first-child:hover {
+    background-color: #2e2e48;
+}
+
+li:first-child img {
+    height: 70px;
+    margin: 0% auto;
+}
+
+li a {
+width: 100%;
+display: flex;
+align-items: center;
+height: 60px;
+text-decoration: none;
+color: white;
+}
+li a span{
+    display: none;
+}
+li:hover {
+background-color: #7e73ff;
+}
+
+li:last-child {
+margin-top: auto;
+}
+
+li:last-child img {
+width: 40px;
+height: 40px;
+background-color: white;
+padding: 0%;
+margin: 0rem 0rem 0rem 1rem;
+border-radius: 15%;
+}
+li span:not(:first-child) {
+display: none;
+font-weight: 200;
+}
+  
+li:first-child span {
+width: 100%;
+display: block;
+visibility: hidden;
+margin: 4% 0%;
+}
+
+li:nth-child(2) {
+background-color: #7e73ff;
+}
+nav:hover {
+width: 12rem;
+}
+span{
+    color: white;
+}
+nav:hover ul span {
+display: block;
+padding: 0rem 0rem 0rem 1rem;
+}
+nav:hover li:first-child span {
+visibility: visible;
+display: block;
+color: white;
+text-align: center;
+}
+main {
+height: 100vh;
+display: grid;
+grid-template-columns: 6fr 4fr;
+}
+.ContainerMain {
+grid-column: 1;
+margin-top: 10vh;
+max-width: 100%;
+}
+.ContainerPreview {
+grid-column: 2;
+}
+
+/* CONFIG SIDE */
+
+/* CELULAR */
+.Share-Block {
+width: 100%;
+display: flex;
+justify-content: center;
+}
+.MyLink {
+box-sizing: border-box;
+border: 4px solid #2e2e48
+;
+border-radius: 5px;
+width: 10rem;
+}
+button {
+background-color: #2e2e48
+;
+color: white;
+height: 3rem;
+font-size: 20px;
+font-weight: 700;
+cursor: pointer;
+border-radius: 10px;
+}
+button:hover {
+background-color: #444468;
+}
+.ShareLink {
+background-color: #2e2e48;
+margin-left: 2rem;
+width: 6rem;
+}
+.ContOptions a:first-child button {
+background-color: #444468;
+}
+
+.ContainerPreview {
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+border-left: 2px solid gray;
+}
+.CellBase {
+background-image: url("../../assets/CellBase.png");
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;
+height: 80vh;
+width: 70%;
+text-align: center;
+margin: 0 auto;
+
+display: flex;
+justify-content: center;
+flex-wrap: nowrap;
+}
+.CellBase > img {
+height: 70vh;
+}
+
+.ContentOptions {
+width: 100%;
+color: #2e2e48
+}
+.ContOptions {
+width: 40%;
+display: flex;
+justify-content: space-between;
+margin: 2rem auto;
+}
+.ContOptions a {
+width: 100%;
+text-align: center;
+}
+.ContOptions a > button {
+width: 80%;
+}
+.ButtonOptions {
+width: 40%;
+margin: 0% auto;
+display: flex;
+justify-content: space-around;
+}
+.ButtonOptions button {
+width: 20%;
+}
+
+.ScrollableContent {
+max-width: 100%;
+margin-top: 5vh;
+height: 63vh;
+overflow: scroll;
+}
+
+button img {
+height: 3rem;
+}
+
+.BackgroundPicker, .LinkDesign{
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+
+.Configuracion, .Estadisticas{
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.Reportes{
+    display:none;
+}
+
