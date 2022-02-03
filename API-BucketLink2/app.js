@@ -8,7 +8,6 @@ var indexRouter = require('./routes/index');
 var bucketRoutes = require('./routes/bucketsRoutes');
 var linksRoutes = require('./routes/linksRoutes');
 
-
 var app = express();
 var cors = require('cors')
 const nodb = require("./models");
@@ -33,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/index', indexRouter);
 app.use('/bucket', bucketRoutes);
 app.use('/links', linksRoutes);
-
+app.use(require('./routes/crudNoticias'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

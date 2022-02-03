@@ -13,8 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LineChartVisitComponent } from './line-chart-visit/line-chart-visit.component';
 import { BarChartVisitComponent } from './bar-chart-visit/bar-chart-visit.component';
 import { PieVisitComponent } from './pie-visit/pie-visit.component';
-import { NoticiaEditComponent } from './noticia-edit/noticia-edit.component'
-
+import { NavbarAdminComponent } from './admin/navbar-admin/navbar-admin.component';
+import { NavbarAdminSuperiorComponent } from './admin/navbar-admin-superior/navbar-admin-superior.component';
 
 
 @NgModule({
@@ -22,6 +22,8 @@ import { NoticiaEditComponent } from './noticia-edit/noticia-edit.component'
     AppComponent,
     HeaderLandingComponent,
     FooterLandingComponent,
+    NavbarAdminComponent,
+    NavbarAdminSuperiorComponent,
     RoutingComponents,
     LinkEditableComponent,
     CelularViewComponent,
@@ -29,8 +31,7 @@ import { NoticiaEditComponent } from './noticia-edit/noticia-edit.component'
     StepperLandingComponent,
     LineChartVisitComponent,
     BarChartVisitComponent,
-    PieVisitComponent,
-    NoticiaEditComponent
+    PieVisitComponent
   ],
   imports: [
     BrowserModule,

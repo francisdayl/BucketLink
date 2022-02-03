@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NoticiaEditComponent } from './noticia-edit.component';
+import { NavbarAdminComponent } from './navbar-admin.component';
 
-describe('NoticiaEditComponent', () => {
-  let component: NoticiaEditComponent;
-  let fixture: ComponentFixture<NoticiaEditComponent>;
+describe('NavbarAdminComponent', () => {
+  let component: NavbarAdminComponent;
+  let fixture: ComponentFixture<NavbarAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NoticiaEditComponent ]
+      declarations: [ NavbarAdminComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NoticiaEditComponent);
+    fixture = TestBed.createComponent(NavbarAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
