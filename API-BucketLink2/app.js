@@ -9,7 +9,6 @@ var bucketRoutes = require('./routes/bucketsRoutes');
 var linksRoutes = require('./routes/linksRoutes');
 var noticiasRoutes = require('./routes/noticiasRoutes');
 
-
 var app = express();
 var cors = require('cors')
 const nodb = require("./models");
@@ -34,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/index', indexRouter);
 app.use('/bucket', bucketRoutes);
 app.use('/links', linksRoutes);
+app.use(require('./routes/crudNoticias'));
 app.use('/noticias', noticiasRoutes);
 
 

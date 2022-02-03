@@ -17,6 +17,8 @@ import { NoticiaEditComponent } from './noticia-edit/noticia-edit.component'
 
 import {PeticionesService} from './peticiones.service'
 
+import { NavbarAdminComponent } from './admin/navbar-admin/navbar-admin.component';
+import { NavbarAdminSuperiorComponent } from './admin/navbar-admin-superior/navbar-admin-superior.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import {PeticionesService} from './peticiones.service'
     AppComponent,
     HeaderLandingComponent,
     FooterLandingComponent,
+    NavbarAdminComponent,
+    NavbarAdminSuperiorComponent,
     RoutingComponents,
     LinkEditableComponent,
     CelularViewComponent,
@@ -31,8 +35,7 @@ import {PeticionesService} from './peticiones.service'
     StepperLandingComponent,
     LineChartVisitComponent,
     BarChartVisitComponent,
-    PieVisitComponent,
-    NoticiaEditComponent
+    PieVisitComponent
   ],
   imports: [
     BrowserModule,

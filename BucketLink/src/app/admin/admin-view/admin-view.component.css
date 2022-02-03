@@ -174,7 +174,6 @@ align-items: center;
 border-left: 2px solid gray;
 }
 .CellBase {
-background-image: url("../../assets/CellBase.png");
 background-repeat: no-repeat;
 background-size: contain;
 background-position: center;
