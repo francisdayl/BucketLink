@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Enlace,Usuario} from '../profile-view/Enlace'
+import {Enlace,Usuario} from '../models/usuario'
 //import {} from "node_modules/d3";
 
 
@@ -12,11 +12,9 @@ export class AdminViewComponent implements OnInit {
 
   subruta:string ='';
 
-  link1 = new Enlace("Instagram","https://www.instagram.com/?hl=es-la","../../assets/Instagram_Icon_White.svg","white","red")
-  link2 = new Enlace("Facebook","https://www.facebook.com/","../../assets/Facebook_Icon_White.svg","white","red")
-  
-  LinksEx: Enlace[] = [this.link1,this.link2];  
-  usuarioPerfil: Usuario = new Usuario(this.subruta,"../../assets/undraw_profile_1.svg","coral",this.LinksEx)
+
+  LinksEx: Enlace[] = [];  
+  usuarioPerfil: Usuario = {"nombreUs":this.subruta,"pictUs":"../../assets/undraw_profile_1.svg","fondo":"coral","enlaces":this.LinksEx}
   
 
   showBcgPicker:boolean = false;
@@ -37,7 +35,7 @@ export class AdminViewComponent implements OnInit {
   }
 
   agregarLink(): void{
-    this.LinksEx.unshift(new Enlace("","","","","",0))    
+    //this.LinksEx.unshift(new Enlace("","","","","",0))    
     contenedor_link: HTMLElement ;
   }
   elegirFondo(): void{

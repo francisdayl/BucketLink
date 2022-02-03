@@ -12,6 +12,8 @@ router.get('/', linksController.list);
  */
 router.get('/:id', linksController.show);
 
+router.get('/:usuario/:link',linksController.getLink)
+
 /*
  * POST
  */
@@ -21,7 +23,7 @@ router.post('/', linksController.create);
  * PUT
  */
 router.put('/:id', linksController.update);
-
+router.put('/aumentar/:usuario/:link',linksController.updateVisit)
 /*
  * DELETE
  */

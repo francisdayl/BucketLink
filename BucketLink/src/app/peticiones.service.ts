@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import {Enlace,Usuario} from 'src/app/profile-view/Enlace'
+import {Enlace,Usuario,Perfil} from './models/usuario'
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +10,16 @@ export class PeticionesService {
   constructor(private http:HttpClient) {
 
   }
-  
+  getRecurso(ruta:string){
+    return this.http.get(ruta)
+  }
   //Metodo para obtener los enlaces
-  getEnlaces(){
-    return this.http.get<Enlace []>('')
-
+  getEnlaces(username: string){
+    return this.http.get<Enlace []>('http://localhost:3002/links/'+username)
   }
   //Metodo para obtener usuario y su info
-  getUsuario(){
-    return this.http.get<Usuario>('')
+  getUsuarioInfo(username: string){
+    return this.http.get<Perfil>('http://localhost:3001/clientes/perfil/'+username)
   }
   guardarFondo(fondo:string){
     

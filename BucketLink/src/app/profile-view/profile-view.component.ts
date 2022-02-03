@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Enlace,Usuario } from './Enlace';
+import { window } from 'd3';
+import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
+//import { Enlace,Usuario } from './Enlace';
+import {Enlace,Perfil} from '../models/usuario'
+import {PeticionesService} from '../peticiones.service'
 
 
 @Component({
@@ -11,36 +15,37 @@ import { Enlace,Usuario } from './Enlace';
 export class ProfileViewComponent implements OnInit {
   
   subruta:string ='';
+  LinksEx: Enlace[] = [];
+  colorF: string ='';
   
+  perfilUsuario: Perfil = {"username":"","Fondo":this.colorF,"CantidadReportes":0}
+  //usuarioPerfil: Perfil = {"username":"","Fondo":this.colorF,"CantidadReportes":0} ;//= Usuario(this.subruta,,this.colorF,this.LinksEx)
+  img:string = "../../assets/undraw_profile_1.svg";
 
-  link1 = new Enlace("Instagram","https://www.instagram.com/?hl=es-la","../../assets/Instagram_Icon_White.svg","white","red")
-  link2 = new Enlace("Facebook","https://www.facebook.com/","../../assets/Facebook_Icon_White.svg","white","red")
-  
-  LinksEx: Enlace[] = [this.link1,this.link2];
-  
-  usuarioPerfil: Usuario = new Usuario(this.subruta,"../../assets/undraw_profile_1.svg","coral",this.LinksEx)
-  
-
-  constructor(private route: ActivatedRoute, private router: Router) { }    
+  constructor(private route: ActivatedRoute, private router: Router, private apiService: PeticionesService) { }    
   
   ngOnInit(): void {
     this.subruta = this.route.snapshot.paramMap.get('id') || '';
-    console.log(this.subruta+"Es el nombre del usuario")
     
-    if(this.checkUserExistence(this.subruta.toLowerCase())){
-      console.warn("user id is ",  this.route.snapshot.paramMap.get('id'))
-    }
-    else{
-      this.router.navigateByUrl('/Error')
-    }
+    this.apiService.getEnlaces(this.subruta.toLowerCase()).subscribe(      
+      res => {
+        this.LinksEx=res;
+        console.log(res)
+        if(this.LinksEx.length==0)
+          this.router.navigateByUrl('/Error')
+      }
+      ,
+      err => console.log(err)
+    )
+    this.apiService.getUsuarioInfo(this.subruta.toLowerCase()).subscribe(
+      res2 => {
+        console.log(res2)
+        this.perfilUsuario=res2;
+      },
+      err => console.log(err)
+    )
+    
   }
 
-  checkUserExistence(ruta_usuario:string):boolean{
-    let usuarios : string[] =['piogram','francisday'];
-    if(usuarios.includes(ruta_usuario)){
-      return true;
-    }    
-    return false;
-  }
 
 }

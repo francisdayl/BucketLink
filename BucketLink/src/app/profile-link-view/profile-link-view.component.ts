@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Enlace,Perfil} from '../models/usuario'
+import {PeticionesService} from '../peticiones.service'
 
 @Component({
   selector: 'profile-link-view',
@@ -8,6 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 
 export class ProfileLinkViewComponent implements OnInit {
+  @Input() NombreUsuario:string;
   @Input() nombreSitio:string;
   @Input() linkSitio:string;
   @Input() colorFondo:string;
@@ -15,14 +18,8 @@ export class ProfileLinkViewComponent implements OnInit {
   @Input() imgSitio:string;
   hover: boolean = false;
 
-  /*@Input() nombreSitio:string;
-  @Input() linkSitio:string;
-  @Input() colorFondo:string;
-  @Input() colorTexto:string;
-  @Input() imgSitio:string;*/
-  
-  //constructor(nombSitio:string, linkSit:string,colorFond:string,colorText:string,imgSit:string) {
-  constructor() {
+  constructor(private apiService: PeticionesService) {
+    this.NombreUsuario = "";
     this.nombreSitio="Sitio";
     this.linkSitio="https://www.google.com/";
     this.colorFondo="white";
@@ -40,5 +37,10 @@ export class ProfileLinkViewComponent implements OnInit {
   visiteSite():void{
     window.location.href  =this.linkSitio;
   }
+  aumentarVisita(url: string):void{
+    
+  }
+
+
 
 }

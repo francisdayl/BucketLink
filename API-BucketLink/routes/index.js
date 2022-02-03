@@ -14,6 +14,7 @@ const links = require("../controllers/links.controller");
 
 router.get('/clientes', clientes.findAll);
 router.get('/clientes/:id_Cliente', clientes.findId);
+router.get('/clientes/perfil/:user',clientes.findUser)
 
 router.get('/usuarios', usuarios.findAll);
 router.get('/usuarios/:id_Usuario', usuarios.findId);

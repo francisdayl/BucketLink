@@ -33,7 +33,7 @@
         </div>
         <div class="ScrollableContent" id="LinksEditableContainer" [ngStyle]="{'display': showLinkEdit ? 'block': 'none'}">
             
-            <link-editable *ngFor="let link of LinksEx"  [nombreSitio]="link.nombre" [linkSitio]="link.nombreUrl" [imgSitio]="link.imagen"></link-editable>
+            <link-editable *ngFor="let link of LinksEx"  [nombreSitio]="link.WebSiteNombre" [linkSitio]="link.WebSiteURL" [imgSitio]="link.Imagen"></link-editable>
 
         </div>
         <div class="BackgroundPicker" [ngStyle]="{'display': showBcgPicker ? 'flex': 'none'}"> 

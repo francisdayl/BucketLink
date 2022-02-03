@@ -1,8 +1,8 @@
-<div class="view" [ngStyle]="{'background-color': usuarioPerfil.fondo}">
-    <img src={{usuarioPerfil.pictUs}} alt="Perfil de Usuario">
+<div class="view" [ngStyle]="{'background-color': perfilUsuario.Fondo}">
+    <img src={{img}} alt="Perfil de Usuario">
     <p>@{{subruta.toLowerCase()}}</p>
     <!--<profile-link-view *ngFor="let user of nombres [nombreSitio]"></profile-link-view>-->
-    <profile-link-view *ngFor="let enlace of LinksEx" [linkSitio]="enlace.nombreUrl" [nombreSitio]="enlace.nombre" [imgSitio]="enlace.imagen" [colorFondo]="enlace.colorFondo" [colorTexto]="enlace.colorLetra"></profile-link-view>
+    <profile-link-view *ngFor="let enlace of LinksEx" [linkSitio]="enlace.WebSiteURL" [nombreSitio]="enlace.WebSiteNombre" [imgSitio]="enlace.Imagen" [colorFondo]="enlace.ColorFondo" [colorTexto]="enlace.ColorLetra" [NombreUsuario]="subruta"></profile-link-view>
 </div>
 
 

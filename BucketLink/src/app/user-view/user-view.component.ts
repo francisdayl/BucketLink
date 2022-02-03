@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Enlace,Usuario} from '../profile-view/Enlace'
+import {Enlace,Perfil} from '../models/usuario'
+import { PeticionesService } from '../peticiones.service';
 
 @Component({
   selector: 'app-user-view',
@@ -7,13 +8,11 @@ import {Enlace,Usuario} from '../profile-view/Enlace'
   styleUrls: ['./user-view.component.css']
 })
 export class UserViewComponent implements OnInit {
-  subruta:string ='';
 
-  link1 = new Enlace("Instagram","https://www.instagram.com/?hl=es-la","../../assets/Instagram_Icon_White.svg","white","red")
-  link2 = new Enlace("Facebook","https://www.facebook.com/","../../assets/Facebook_Icon_White.svg","white","red")
-  
-  LinksEx: Enlace[] = [this.link1,this.link2];  
-  usuarioPerfil: Usuario = new Usuario(this.subruta,"../../assets/undraw_profile_1.svg","coral",this.LinksEx)
+  subruta :string ='dfyanez';
+  colorF: string = 'white;'
+  LinksEx: Enlace[] = [];  
+  usuarioPerfil: Perfil = {"username":"dfyanez","Fondo":this.colorF,"CantidadReportes":0}
   
 
   showBcgPicker:boolean = false;
@@ -28,13 +27,28 @@ export class UserViewComponent implements OnInit {
   statisticsOption:boolean=false;
   configOption:boolean=false;
 
-  constructor() { }
+  constructor(private apiService: PeticionesService) { }
 
   ngOnInit(): void {
+    this.apiService.getEnlaces(this.subruta.toLowerCase()).subscribe(      
+      res => {
+        this.LinksEx=res;
+        console.log(res)
+      }
+      ,
+      err => console.log(err)
+    )
+    this.apiService.getUsuarioInfo(this.subruta.toLowerCase()).subscribe(
+      res2 => {
+        console.log(res2)
+        this.usuarioPerfil=res2;
+      },
+      err => console.log(err)
+    )
   }
 
   agregarLink(): void{
-    this.LinksEx.unshift(new Enlace("","","","","",0))    
+    //this.LinksEx.unshift(new Enlace("","","","","",0))    
     contenedor_link: HTMLElement ;
   }
   elegirFondo(): void{
@@ -68,6 +82,8 @@ export class UserViewComponent implements OnInit {
     this.statisticsOption=false;
     this.configOption=true;
   }
+
+  
 
 }
 

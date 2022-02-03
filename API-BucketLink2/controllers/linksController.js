@@ -104,12 +104,12 @@ module.exports = {
             links.save(function (err, links) {
                 if (err) {
                     return res.status(500).json({
-                        message: 'Error when updating links.',
+                        message: 'Error when updating links',
                         error: err
                     });
                 }
-
-                return res.json(links);
+    
+                return res.status(201).json(links);
             });
         });
     },
@@ -129,6 +129,68 @@ module.exports = {
             }
 
             return res.status(204).json();
+        });
+    },
+    updateVisit: function(req,res){
+        var user = req.params.usuario;  
+        var url = req.params.link;
+        console.log("ok")
+        LinksModel.findOne({idCliente : user , WebSiteNombre:url}, function (err, links) {
+            if (err) {
+                return res.status(500).json({
+                    message: 'Error when getting links',
+                    error: err
+                });
+            }
+
+            if (!links) {
+                return res.status(404).json({
+                    message: 'No such links'
+                });
+            }
+
+            links.WebSiteURL = req.body.WebSiteURL ? req.body.WebSiteURL : links.WebSiteURL;
+			links.WebSiteNombre = req.body.WebSiteNombre ? req.body.WebSiteNombre : links.WebSiteNombre;
+			links.idCliente = req.body.idCliente ? req.body.idCliente : links.idCliente;
+			links.Imagen = req.body.Imagen ? req.body.Imagen : links.Imagen;
+			links.ColorFondo = req.body.ColorFondo ? req.body.ColorFondo : links.ColorFondo;
+			links.ColorLetra = req.body.ColorLetra ? req.body.ColorLetra : links.ColorLetra;
+			links.Visitas = links.Visitas+1;
+			console.log(links.Visitas)
+
+            links.save(function (err, links) {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error when updating links.',
+                        error: err
+                    });
+                }
+                return res.json(links);
+            });
+        });
+    }
+    ,
+    getLink: function (req, res) {
+
+        var user = req.params.usuario;  
+        var url = req.params.link;
+        
+        console.log(user,url)
+        LinksModel.findOne({idCliente : user , WebSiteNombre:url}, function (err, links) {
+            if (err) {
+                return res.status(500).json({
+                    message: 'Error when getting links.',
+                    error: err
+                });
+            }
+
+            if (!links) {
+                return res.status(404).json({
+                    message: 'No such links'
+                });
+            }
+
+            return res.json(links);
         });
     }
 };

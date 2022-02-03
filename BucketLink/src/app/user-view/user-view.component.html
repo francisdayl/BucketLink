@@ -2,7 +2,7 @@
     <ul>
     <li>
         <img src="../../assets/UserIcon.svg" alt="Icono de Usuario" class="UserIcon"/>
-        <span>@Usuario123</span>
+        <span>{{subruta}}</span>
     </li>
     <li>
         <a (click)="desingPage()"  (mouseover)="hoverDesign=true" (mouseleave)="hoverDesign=false" [ngStyle]="{'background-color': designOption||hoverDesign ? '#7e73ff':'#2e2e48' }"><img src="../../assets/DashboardIcon.svg" alt="Diseño" class="MenuIcon"/>
@@ -37,7 +37,7 @@
         </div>
         <div class="ScrollableContent" id="LinksEditableContainer" [ngStyle]="{'display': showLinkEdit ? 'block': 'none'}">
             
-            <link-editable *ngFor="let link of LinksEx"  [nombreSitio]="link.nombre" [linkSitio]="link.nombreUrl" [imgSitio]="link.imagen"></link-editable>
+            <link-editable *ngFor="let link of LinksEx"  [nombreSitio]="link.WebSiteNombre" [linkSitio]="link.WebSiteURL" [imgSitio]="link.Imagen"></link-editable>
 
         </div>
         <div class="BackgroundPicker" [ngStyle]="{'display': showBcgPicker ? 'flex': 'none'}"> 
@@ -71,9 +71,7 @@
 </main>
 <div class="Estadisticas" [ngStyle]="{'display': statisticsOption ? 'flex': 'none'}">
     <div>
-        Estadisticas de 1
-        Estadisticas de 2
-        Estadisticas de 3
+        <pie-visit></pie-visit>
     </div>
 </div>
 <div class="Configuracion" [ngStyle]="{'display': configOption ? 'flex': 'none'}" >

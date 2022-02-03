@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {Enlace} from '../models/usuario'
 import * as d3 from 'd3-selection';
 import * as d3Scale from 'd3-scale';
 import * as d3Shape from 'd3-shape';
+import { PeticionesService } from '../peticiones.service';
 
 
 @Component({
@@ -11,17 +13,9 @@ import * as d3Shape from 'd3-shape';
 })
 export class PieVisitComponent implements OnInit {
 
-  StatsPieChart: any[] = [
-    {party: 'BJP', electionP: 56},
-    {party: 'INC', electionP: 18},
-    {party: 'AA', electionP: 10},
-    {party: 'CPI', electionP: 5},
-    {party: 'CPI-M', electionP: 5},
-    {party: 'BSP', electionP: 7},
-    {party: 'AITS',  electionP: 10}
-];
+  StatsPieChart: any[] = [];
 
-  title = 'D3 Pie Chart in Angular 10';
+  title = 'Distribucion de las Visitas';
 
   margin = {top: 20, right: 20, bottom: 30, left: 50};
   width: number;
@@ -34,20 +28,40 @@ export class PieVisitComponent implements OnInit {
   pie: any;
   color: any;
   svg: any;
+  subruta = "dfyanez";
 
-  constructor() {
+  constructor(private apiService: PeticionesService) {
     this.width = 900 - this.margin.left - this.margin.right ;
     this.height = 500 - this.margin.top - this.margin.bottom;
     this.radius = Math.min(this.width, this.height) / 2;
   }
-
+  LinksEx: Enlace [] = []
   ngOnInit() {
-    this.initSvg();
-    this.drawPie();
+    this.apiService.getEnlaces(this.subruta.toLowerCase()).subscribe(      
+      res => {
+        let total = 0;
+        for(let i = 0; i< res.length;i++){
+          let visitados = res[i]["Visitas"]||0
+          total+= visitados
+        }
+        for(let i = 0; i< res.length;i++){
+          let visitados = res[i]["Visitas"]||0;
+          this.StatsPieChart.push({party: res[i]['WebSiteNombre'], electionP: Math.round(100*visitados/total) })
+        }
+        console.log(res)
+        this.initSvg();
+        this.drawPie();
+      }
+      ,
+      err => console.log(err)
+    )
+    
   }
+  
+
   initSvg() {
     this.color = d3Scale.scaleOrdinal()
-        .range(['#FFA500', '#00FF00', '#FF0000', '#6b486b', '#FF00FF', '#d0743c', '#00FA9A']);
+        .range(['#FFA500', '#00FF00', '#FF0000']);
     this.arc = d3Shape.arc()
         .outerRadius(this.radius - 10)
         .innerRadius(0);
