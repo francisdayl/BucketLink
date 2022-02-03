@@ -1,17 +1,20 @@
 
 
+
 export class Enlace{
     nombre:string ;
     imagen:string ;
     nombreUrl: string;
     colorFondo: string;
     colorLetra: string;
-    constructor(nomb:string ,nombUrl:string,nombImg:string,colorF:string,colorL:string){
+    cant_visit: number;
+    constructor(nomb:string ,nombUrl:string,nombImg:string,colorF:string,colorL:string,c_visit:number=0){
         this.nombre = nomb;
         this.nombreUrl = nombUrl;
         this.imagen = nombImg;
         this.colorFondo = colorF;
         this.colorLetra = colorL;
+        this.cant_visit = c_visit;
     }
 }
 

@@ -9,7 +9,10 @@ import { StepperLandingComponent } from './stepper-landing copy/stepper-landing.
 import { LinkEditableComponent } from './link-editable/link-editable.component';
 import { CelularViewComponent } from './celular-view/celular-view.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { LineChartVisitComponent } from './line-chart-visit/line-chart-visit.component';
+import { BarChartVisitComponent } from './bar-chart-visit/bar-chart-visit.component';
+import { PieVisitComponent } from './pie-visit/pie-visit.component'
 
 
 
@@ -22,7 +25,10 @@ import { HttpClientModule } from '@angular/common/http'
     LinkEditableComponent,
     CelularViewComponent,
     FormularioLandingComponent,
-    StepperLandingComponent
+    StepperLandingComponent,
+    LineChartVisitComponent,
+    BarChartVisitComponent,
+    PieVisitComponent
   ],
   imports: [
     BrowserModule,

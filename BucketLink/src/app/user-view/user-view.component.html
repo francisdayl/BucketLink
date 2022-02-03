@@ -1,19 +1,19 @@
-<nav>
+<nav >
     <ul>
     <li>
         <img src="../../assets/UserIcon.svg" alt="Icono de Usuario" class="UserIcon"/>
         <span>@Usuario123</span>
     </li>
     <li>
-        <a href="#"><img src="../../assets/DashboardIcon.svg" alt="Diseño" class="MenuIcon"/>
+        <a (click)="desingPage()"  (mouseover)="hoverDesign=true" (mouseleave)="hoverDesign=false" [ngStyle]="{'background-color': designOption||hoverDesign ? '#7e73ff':'#2e2e48' }"><img src="../../assets/DashboardIcon.svg" alt="Diseño" class="MenuIcon"/>
         <span>Diseño</span></a>
     </li>
     <li>
-        <a href="#"><img src="../../assets/StatisticsIcon.svg" alt="Estadísticas" class="MenuIcon"/>
+        <a (click)="statisticsPage()" (mouseover)="hoverStatistics=true" (mouseleave)="hoverStatistics=false" [ngStyle]="{'background-color': statisticsOption||hoverStatistics ? '#7e73ff':'#2e2e48' }"><img src="../../assets/StatisticsIcon.svg" alt="Estadísticas" class="MenuIcon"/>
         <span>Estadísticas</span></a>
     </li>
     <li>
-        <a href="#"><img src="../../assets/ConfigIcon.svg" alt="Configuración" class="MenuIcon"/>
+        <a (click)="configPage()"  (mouseover)="hoverConfig=true" (mouseleave)="hoverConfig=false" [ngStyle]="{'background-color': configOption||hoverConfig ? '#7e73ff':'#2e2e48'}" ><img src="../../assets/ConfigIcon.svg" alt="Configuración" class="MenuIcon"/>
         <span>Configuración</span></a>
     </li>
     <li class="LogOut">
@@ -23,186 +23,39 @@
     </li>
     </ul>
 </nav>
-<main>
-    <div class="ContainerMain">
+<main [ngStyle]="{'display': designOption ? 'grid': 'none'}">
+    <div class="ContainerMain" >
         <div class="ContentOptions">
             <div class="ContOptions">
-                <a><button disabled>Links</button></a>
-                <a href="fondos.html"><button href="fondos.html">Fondo</button></a>
+                <a (click)="editarLinks()"><button [ngStyle]="{'background-color': showLinkEdit ? '#7e73ff':'#2e2e48'}">Links</button></a>
+                <a (click)="elegirFondo()"><button [ngStyle]="{'background-color': showBcgPicker ? '#7e73ff':'#2e2e48'}">Fondo</button></a>
             </div>
             <div class="ButtonOptions">
-                <button>+</button>
-                <button><img src="../../assets/StyleIcon.svg" alt="" /></button>
+                <button (click)="agregarLink()">+</button>
+                <button (click)="colorearLinks()" [ngStyle]="{'background-color': showLinkDesign ? '#7e73ff':'#2e2e48'}"><img src="../../assets/StyleIcon.svg" alt="" /></button>
             </div>
         </div>
-        <div class="ScrollableContent">
+        <div class="ScrollableContent" id="LinksEditableContainer" [ngStyle]="{'display': showLinkEdit ? 'block': 'none'}">
             
-            <div class="LinkContainer">
-            <div class="DraggableSection">
-                <img
-                src="../../assets/BurgerIcon.svg"
-                alt="Icono para mover elemento"
-                class="DraggableImg"
-                />
-            </div>
-            <div class="LinkInfo">
-                <div class="EditableInfo">
-                <input
-                    type="text"
-                    name="LinkTitle"
-                    id="LinkTitle0"
-                    value="Instagram"
-                />
-                <input
-                    type="text"
-                    name="LinkUrl"
-                    id="LinkUrl0"
-                    value="www.instagram.com"
-                />
-                </div>
-                <div class="LinkOptions">
-                <div class="LinkOptionStyle">
-                    <button class="LinkOption">
-                    <img
-                        src="../../assets/ThumbnaiIcon.svg"
-                        alt="Ingresar Imagen Link"
-                    />
-                    </button>
-                    <button class="LinkOption">
-                    <img
-                        src="../../assets/StyleIconAlter.svg"
-                        alt="Editar Aspecto del link"
-                    />
-                    </button>
-                </div>
-                <div class="LinkOptionsConfig">
-                    <button class="LinkOption">
-                    <img src="../../assets/SaveIcon.svg" alt="" />
-                    </button>
-                    <button class="LinkOption">
-                    <img
-                        src="../../assets/ShowIcon.svg"
-                        alt="Mostrar/Ocultar Link"
-                    />
-                    </button>
-                    <button class="LinkOption">
-                    <img src="../../assets/DeleteIcon.svg" alt="Borrar Link" />
-                    </button>
-                </div>
-                </div>
-            </div>
-            </div>
-            <div class="LinkContainer">
-            <div class="DraggableSection">
-                <img
-                src="../../assets/BurgerIcon.svg"
-                alt="Icono para mover elemento"
-                class="DraggableImg"
-                />
-            </div>
-            <div class="LinkInfo">
-                <div class="EditableInfo">
-                <input
-                    type="text"
-                    name="LinkTitle"
-                    id="LinkTitle0"
-                    value="Instagram"
-                />
-                <input
-                    type="text"
-                    name="LinkUrl"
-                    id="LinkUrl0"
-                    value="www.instagram.com"
-                />
-                </div>
-                <div class="LinkOptions">
-                <div class="LinkOptionStyle">
-                    <button class="LinkOption">
-                    <img
-                        src="../../assets/ThumbnaiIcon.svg"
-                        alt="Ingresar Imagen Link"
-                    />
-                    </button>
-                    <button class="LinkOption">
-                    <img
-                        src="../../assets/StyleIconAlter.svg"
-                        alt="Editar Aspecto del link"
-                    />
-                    </button>
-                </div>
-                <div class="LinkOptionsConfig">
-                    <button class="LinkOption">
-                    <img src="../../assets/SaveIcon.svg" alt="" />
-                    </button>
-                    <button class="LinkOption">
-                    <img
-                        src="../../assets/ShowIcon.svg"
-                        alt="Mostrar/Ocultar Link"
-                    />
-                    </button>
-                    <button class="LinkOption">
-                    <img src="../../assets/DeleteIcon.svg" alt="Borrar Link" />
-                    </button>
-                </div>
-                </div>
-            </div>
-            </div>
-            <div class="LinkContainer">
-            <div class="DraggableSection">
-                <img
-                src="../../assets/BurgerIcon.svg"
-                alt="Icono para mover elemento"
-                class="DraggableImg"
-                />
-            </div>
-            <div class="LinkInfo">
-                <div class="EditableInfo">
-                <input
-                    type="text"
-                    name="LinkTitle"
-                    id="LinkTitle0"
-                    value="Instagram"
-                />
-                <input
-                    type="text"
-                    name="LinkUrl"
-                    id="LinkUrl0"
-                    value="www.instagram.com"
-                />
-                </div>
-                <div class="LinkOptions">
-                <div class="LinkOptionStyle">
-                    <button class="LinkOption">
-                    <img
-                        src="../../assets/ThumbnaiIcon.svg"
-                        alt="Ingresar Imagen Link"
-                    />
-                    </button>
-                    <button class="LinkOption">
-                    <img
-                        src="../../assets/StyleIconAlter.svg"
-                        alt="Editar Aspecto del link"
-                    />
-                    </button>
-                </div>
-                <div class="LinkOptionsConfig">
-                    <button class="LinkOption">
-                    <img src="../../assets/SaveIcon.svg" alt="" />
-                    </button>
-                    <button class="LinkOption">
-                    <img
-                        src="../../assets/ShowIcon.svg"
-                        alt="Mostrar/Ocultar Link"
-                    />
-                    </button>
-                    <button class="LinkOption">
-                    <img src="../../assets/DeleteIcon.svg" alt="Borrar Link" />
-                    </button>
-                </div>
-                </div>
-            </div>
-            </div>
+            <link-editable *ngFor="let link of LinksEx"  [nombreSitio]="link.nombre" [linkSitio]="link.nombreUrl" [imgSitio]="link.imagen"></link-editable>
+
         </div>
+        <div class="BackgroundPicker" [ngStyle]="{'display': showBcgPicker ? 'flex': 'none'}"> 
+            <div>
+            <label for="bcgColor">Elija el color de fondo para su perfil:</label><input type="color" name="bcgColor" id="bcgColor">
+            </div>
+            <button>Guardar Cambios</button>
+        </div>
+        <div class="LinkDesign" [ngStyle]="{'display': showLinkDesign ? 'flex': 'none'}">
+            <div>
+            <label for="bcgColor">Elija el color de fondo para sus links:</label><input type="color" name="bcgColor" id="bcgColor">
+            </div>
+            <div>
+            <label for="textColor">Elija el color de letra para sus links:</label><input type="color" name="textColor" id="textColor">    
+            </div>
+            <button>Guardar Cambios</button>
+        </div>
+        
     </div>
     <div class="ContainerPreview">
         <div class="Share-Block">
@@ -216,3 +69,27 @@
         </div>
     </div>
 </main>
+<div class="Estadisticas" [ngStyle]="{'display': statisticsOption ? 'flex': 'none'}">
+    <div>
+        Estadisticas de 1
+        Estadisticas de 2
+        Estadisticas de 3
+    </div>
+</div>
+<div class="Configuracion" [ngStyle]="{'display': configOption ? 'flex': 'none'}" >
+    <div>
+        <label for="correo">Correo: </label>
+        <input type="email" value="Correo@hotmail.com" disabled>
+    </div>
+    <div>
+        <label for="clave">Nueva Contraseña: </label>
+        <input type="password" name="clave" id="clave" placeholder="Ingrese nueva contraseña">
+    </div>
+    <div>
+        <label for="clave">Confirme la nueva Contraseña: </label>
+        <input type="password" name="clave2" id="clave2" placeholder="Repita la nueva contraseña">
+    </div>
+    <button>Actualizar Clave</button>
+</div>
+
+

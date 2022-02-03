@@ -1,16 +1,18 @@
 * {
     font-size: 14px;
     font-family:  Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 
-main {
+main , .Configuracion, .Estadisticas{
 margin-left: 80px;
 }
 
 nav {
 position: fixed;
-background-color: var(--main-color) ;
+background-color: #2e2e48;
 width: 80px;
 height: 100%;
 transition: width 200ms ease;
@@ -34,7 +36,9 @@ height: 40px;
 width: 40px;
 margin: 0 0 0 20px;
 }
-
+li a{
+    cursor: pointer;
+}
 li:first-child {
 margin: 80px auto 140px;
 display: flex;
@@ -44,7 +48,7 @@ align-items: center;
 }
 
 li:first-child:hover {
-    background-color: var(--main-color);
+    background-color: #2e2e48;
 }
 
 li:first-child img {
@@ -58,13 +62,13 @@ display: flex;
 align-items: center;
 height: 60px;
 text-decoration: none;
-color: var(--innertext-color);
+color: white;
 }
 li a span{
     display: none;
 }
 li:hover {
-background-color: var(--selected-color);
+background-color: #7e73ff;
 }
 
 li:last-child {
@@ -134,13 +138,15 @@ justify-content: center;
 }
 .MyLink {
 box-sizing: border-box;
-border: 4px solid var(--main-color);
+border: 4px solid #2e2e48
+;
 border-radius: 5px;
 width: 10rem;
 }
 button {
-background-color: var(--main-color);
-color: var(--innertext-color);
+background-color: #2e2e48
+;
+color: white;
 height: 3rem;
 font-size: 20px;
 font-weight: 700;
@@ -151,7 +157,7 @@ button:hover {
 background-color: #444468;
 }
 .ShareLink {
-background-color: var(--main-color);
+background-color: #2e2e48;
 margin-left: 2rem;
 width: 6rem;
 }
@@ -186,6 +192,7 @@ height: 70vh;
 
 .ContentOptions {
 width: 100%;
+color: #2e2e48
 }
 .ContOptions {
 width: 40%;
@@ -216,75 +223,29 @@ margin-top: 5vh;
 height: 63vh;
 overflow: scroll;
 }
-.LinkContainer {
-width: 60%;
-border: 4px solid var(--main-color);
 
-border-radius: 0.5rem;
-height: 5rem;
-margin: 3rem auto;
-}
 button img {
 height: 3rem;
 }
-.LinkContainer {
-display: grid;
-grid-template-columns: 1fr 10fr;
-overflow: hidden;
-}
-.DraggableSection {
-grid-column: 1;
-cursor: grab;
-border-right: 4px solid var(--main-color);
-overflow: hidden;
-}
-.LinkInfo {
-grid-column: 2;
-}
-.DraggableImg {
-height: 3rem;
-width: 2rem;
-padding: 35% 15%;
-}
-.EditableInfo {
-margin-left: 0.5rem;
-display: flex;
-flex-direction: column;
-}
-input {
-font-weight: 500;
-padding-left: 0.5rem;
-}
-input[name="LinkTitle"] {
-font-weight: 700;
+
+.BackgroundPicker, .LinkDesign{
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
 }
 
-.LinkOptions {
-margin-top: 3%;
-display: flex;
-justify-content: space-between;
+
+
+.Configuracion, .Estadisticas{
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
 }
-.LinkContainer input {
-border: none;
-}
-.LinkOptions img {
-height: 1.5rem;
-width: 1.5rem;
-}
-.LinkOptions button {
-height: 1.5rem;
-width: 1.5rem;
-background-color: white;
-border: none;
-}
-.LinkOptionStyle,
-.LinkOptionsConfig {
-height: 1.5rem;
-width: 1.5rem;
-width: 30%;
-display: flex;
-justify-content: space-evenly;
-}
-.LinkOptionStyle {
-width: 20%;
-}
+

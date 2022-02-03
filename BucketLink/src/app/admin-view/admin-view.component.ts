@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//import {} from "node_modules/d3";
+
 
 @Component({
   selector: 'app-admin-view',
@@ -13,3 +15,5 @@ export class AdminViewComponent implements OnInit {
   }
 
 }
+
+

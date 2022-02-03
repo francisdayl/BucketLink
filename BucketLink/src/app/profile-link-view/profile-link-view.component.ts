@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'profile-link-view',
   templateUrl: './profile-link-view.component.html',
   styleUrls: ['./profile-link-view.component.css']
-})
+}) 
 
 
 export class ProfileLinkViewComponent implements OnInit {
