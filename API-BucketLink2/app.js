@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var bucketRoutes = require('./routes/bucketsRoutes');
 var linksRoutes = require('./routes/linksRoutes');
+var noticiasRoutes = require('./routes/noticiasRoutes');
 
 
 var app = express();
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/index', indexRouter);
 app.use('/bucket', bucketRoutes);
 app.use('/links', linksRoutes);
+app.use('/noticias', noticiasRoutes);
 
 
 // catch 404 and forward to error handler
